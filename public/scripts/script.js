@@ -15,6 +15,7 @@ myApp.controller( 'whereMyPeeps', [ '$scope', '$http', function( $scope, $http )
   });//end of $http call
     $scope.nameIn ='';
     $scope.locationIn='';
+    $scope.getRecords();
 };//end of addRecord function
 
   $scope.getRecords = function(){
@@ -24,9 +25,10 @@ myApp.controller( 'whereMyPeeps', [ '$scope', '$http', function( $scope, $http )
     }).then( function( response ){
       $scope.allTheRecords = response; // .data;
       console.log( $scope.allTheRecords );
-    }),
+    },
     function myError( response ){
       console.log( response.statusText );
-    };
+    }
+  );
   };//end of getRecords function
 }]);//end of controller

@@ -2,7 +2,7 @@
 <html ng-app="myApp">
   <head>
     <meta charset="utf-8">
-    <title>MEANie</title>
+    <title>MEANie Two</title>
     <script src="vendors/angular.min.js" charset="utf-8"></script>
     <script src="scripts/script.js" charset="utf-8"></script>
   </head>
@@ -12,8 +12,10 @@
     <div ng-controller="whereMyPeeps">
       <input type="text" value="" ng-model="nameIn" placeholder="Name">
       <input type="text" value="" ng-model="locationIn" placeholder="Location">
+      <p>MEANie bind output: {{ nameIn }} {{locationIn}}</p>
       <button ng-click='addRecord()'>Add</button>
       <button ng-click='getRecords()'>Read</button>
+      <p ng-repeat='record in allTheRecords.data'>{{record.name}}{{record.location}}</p>
     </div>
   </body>
 </html>
